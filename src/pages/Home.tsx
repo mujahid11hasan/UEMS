@@ -14,6 +14,7 @@ interface RegistrationForm {
 function Home() {
   const navigate = useNavigate();
   const { user, supabase } = useAuth();
+  const { events, loading } = useEvents({ limit: 3 });
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [registrationForm, setRegistrationForm] = useState<RegistrationForm>({
     name: '',
